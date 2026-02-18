@@ -883,3 +883,23 @@ export function getGridTemplateColumnsForTable(columns) {
     .join(' ')
   return columnsWidth + ' 22px'
 }
+
+export function clearCache() {
+  ;[
+    '_last_load',
+    '_version_number',
+    'metadata_version',
+    'page_info',
+    'last_visited',
+  ].forEach((key) => localStorage.removeItem(key))
+
+  for (let key in localStorage) {
+    if (
+      key.startsWith('_page:') ||
+      key.startsWith('_doctype:') ||
+      key.startsWith('preferred_breadcrumbs:')
+    ) {
+      localStorage.removeItem(key)
+    }
+  }
+}
