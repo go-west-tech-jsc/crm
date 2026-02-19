@@ -340,6 +340,7 @@ const steps = reactive([
     onClick: () => {
       minimize.value = true
       showChangePasswordModal.value = true
+      capture('onboarding_step_clicked_setup_password')
     },
   },
   {
@@ -350,6 +351,7 @@ const steps = reactive([
     onClick: () => {
       minimize.value = true
       router.push({ name: 'Leads' })
+      capture('onboarding_step_clicked_create_first_lead')
     },
   },
   {
@@ -361,6 +363,7 @@ const steps = reactive([
       minimize.value = true
       showSettings.value = true
       activeSettingsPage.value = 'Invite User'
+      capture('onboarding_step_clicked_invite_your_team')
     },
     condition: () => isManager(),
   },
@@ -372,7 +375,7 @@ const steps = reactive([
     dependsOn: 'create_first_lead',
     onClick: async () => {
       minimize.value = true
-
+      capture('onboarding_step_clicked_convert_lead_to_deal')
       currentStep.value = {
         title: __('Convert lead to deal'),
         buttonLabel: __('Convert'),
@@ -400,6 +403,7 @@ const steps = reactive([
     onClick: async () => {
       minimize.value = true
       let deal = await getFirstDeal()
+      capture('onboarding_step_clicked_create_first_task')
 
       if (deal) {
         router.push({
@@ -420,6 +424,7 @@ const steps = reactive([
     onClick: async () => {
       minimize.value = true
       let deal = await getFirstDeal()
+      capture('onboarding_step_clicked_create_first_note')
 
       if (deal) {
         router.push({
@@ -441,6 +446,7 @@ const steps = reactive([
     onClick: async () => {
       minimize.value = true
       let deal = await getFirstDeal()
+      capture('onboarding_step_clicked_add_first_comment')
 
       if (deal) {
         router.push({
@@ -462,6 +468,7 @@ const steps = reactive([
     onClick: async () => {
       minimize.value = true
       let deal = await getFirstDeal()
+      capture('onboarding_step_clicked_send_first_email')
 
       if (deal) {
         router.push({
@@ -482,6 +489,7 @@ const steps = reactive([
     dependsOn: 'convert_lead_to_deal',
     onClick: async () => {
       minimize.value = true
+      capture('onboarding_step_clicked_change_deal_status')
 
       currentStep.value = {
         title: __('Change deal status'),
