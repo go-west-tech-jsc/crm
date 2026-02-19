@@ -124,7 +124,7 @@
                   },
                 ]"
                 v-model="notification.interval"
-                @change="() => handleIntervalChange(notification)"
+                @update:modelValue="() => handleIntervalChange(notification)"
                 :placeholder="__('minutes')"
               />
               <Button
@@ -213,7 +213,7 @@
                   },
                 ]"
                 v-model="notification.interval"
-                @change="() => handleIntervalChange(notification)"
+                @update:modelValue="() => handleIntervalChange(notification)"
                 :placeholder="__('minutes')"
               />
               <div class="text-p-sm text-ink-gray-5">

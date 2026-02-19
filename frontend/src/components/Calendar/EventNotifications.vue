@@ -55,7 +55,7 @@
                 type="select"
                 :options="intervalOptions(notification)"
                 v-model="notification.interval"
-                @change="() => handleIntervalChange(notification)"
+                @update:modelValue="() => handleIntervalChange(notification)"
                 variant="outline"
                 :placeholder="__('minutes')"
               />
@@ -116,7 +116,7 @@
                 type="select"
                 :options="intervalOptions(notification)"
                 v-model="notification.interval"
-                @change="() => handleIntervalChange(notification)"
+                @update:modelValue="() => handleIntervalChange(notification)"
                 variant="outline"
                 :placeholder="__('minutes')"
               />

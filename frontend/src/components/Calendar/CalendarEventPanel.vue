@@ -427,7 +427,7 @@
               v-model="_event.referenceDoctype"
               variant="outline"
               :placeholder="__('Add lead or deal')"
-              @change="
+              @update:modelValue="
                 () => {
                   _event.referenceDocname = ''
                   sync()
@@ -485,7 +485,7 @@
               v-model="_event.eventType"
               variant="outline"
               :placeholder="__('Private or Public')"
-              @change="() => sync()"
+              @update:modelValue="() => sync()"
             />
           </div>
         </div>
