@@ -167,7 +167,7 @@ export function useEvent({
     const start = dayjs(startTime)
     const end = dayjs(endTime)
 
-    if (isFullDay) return __('All day')
+    if (isFullDay) return __('All Day')
 
     return `${start.format(format)} - ${end.format(format)}`
   }
@@ -243,15 +243,15 @@ export function computeAutoToTime(fromTime) {
 export function validateTimeRange({ fromDate, fromTime, toTime, isFullDay }) {
   if (isFullDay) return { valid: true, error: null }
   if (!fromTime || !toTime) {
-    return { valid: false, error: __('Start and end time are required') }
+    return { valid: false, error: __('Start & End Time Are Required') }
   }
   const start = dayjs(fromDate + ' ' + fromTime)
   const end = dayjs(fromDate + ' ' + toTime)
   if (!start.isValid() || !end.isValid()) {
-    return { valid: false, error: __('Invalid start or end time') }
+    return { valid: false, error: __('Invalid Start Or End Time') }
   }
   if (end.diff(start, 'minute') <= 0) {
-    return { valid: false, error: __('End time should be after start time') }
+    return { valid: false, error: __('End Time Should Be After Start Time') }
   }
   return { valid: true, error: null }
 }

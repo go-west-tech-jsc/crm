@@ -12,7 +12,7 @@
     @click="props.conditions.push(['', '', ''])"
   >
     <FeatherIcon name="plus" class="h-4" />
-    {{ __('Add a custom condition') }}
+    {{ __('Add a Custom Condition') }}
   </div>
   <div class="flex items-center justify-between mt-2">
     <Dropdown
@@ -23,7 +23,7 @@
       <Button
         :disabled="slaDataErrors.condition != ''"
         :icon-right="open ? 'chevron-up' : 'chevron-down'"
-        :label="__('Add condition')"
+        :label="__('Add Condition')"
       />
     </Dropdown>
     <ErrorMessage :message="slaDataErrors.condition" />
@@ -61,13 +61,13 @@ const getConjunction = () => {
 
 const dropdownOptions = [
   {
-    label: __('Add condition'),
+    label: __('Add Condition'),
     onClick: () => {
       addCondition()
     },
   },
   {
-    label: __('Add condition group'),
+    label: __('Add Condition Group'),
     onClick: () => {
       const conjunction = getConjunction()
       props.conditions.push(conjunction, [[]])

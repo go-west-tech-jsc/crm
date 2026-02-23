@@ -76,18 +76,17 @@
     </template>
   </div>
 
-  <div
+  <EmptyState
     v-else
-    class="flex flex-1 flex-col items-center justify-center gap-2 p-4"
-  >
-    <EventIcon class="h-16 w-16 text-ink-gray-3" />
-    <div class="text-base font-medium text-ink-gray-3 text-center">
-      {{ __('No upcoming events') }}
-    </div>
-  </div>
+    title="No Upcoming Events"
+    description="You have no events scheduled"
+    :icon="EventIcon"
+    width="lg"
+  />
 </template>
 <script setup>
 import MultipleAvatar from '@/components/MultipleAvatar.vue'
+import EmptyState from '@/components/ListViews/EmptyState.vue'
 import EventIcon from '@/components/Icons/EventIcon.vue'
 import { useEventNotifications } from '@/data/notifications'
 import { notificationsStore } from '@/stores/notifications'
@@ -186,7 +185,7 @@ const computedEvents = computed(() => {
 })
 
 const formattedDateTime = (e) => {
-  if (e.allDay) return __('All day')
+  if (e.allDay) return __('All Day')
 
   if (e.fromTime.includes(':00')) {
     e.fromTime = e.fromTime.replace(':00', '')

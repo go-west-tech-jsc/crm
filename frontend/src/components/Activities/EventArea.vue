@@ -72,7 +72,7 @@
   </div>
   <EmptyState
     v-else
-    :title="__('No events scheduled')"
+    :title="__('No Events Scheduled')"
     :description="
       __('No events coming up. Create a new one to keep things on track.')
     "

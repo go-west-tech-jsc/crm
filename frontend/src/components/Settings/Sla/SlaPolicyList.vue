@@ -1,6 +1,6 @@
 <template>
   <SettingsLayoutBase
-    :title="__('SLA policies')"
+    :title="__('SLA Policies')"
     :description="__('Manage your service level agreement policies')"
   >
     <template #header-actions>
@@ -50,7 +50,7 @@
             !slaPolicyListResource.list.loading &&
             !slaPolicyListResource.list.data?.length
           "
-          title="No SLA found"
+          title="No SLA Policies Found"
           description="Add one to get started."
           :icon="ShieldCheck"
         />
@@ -61,7 +61,7 @@
             <div class="col-span-5">
               {{ __('Policy Name') }}
             </div>
-            <div class="col-span-1">{{ __('Apply on') }}</div>
+            <div class="col-span-1">{{ __('Apply On') }}</div>
             <div class="col-span-1">{{ __('Enabled') }}</div>
           </div>
           <hr class="mt-2 mx-2 border-outline-gray-2" />
@@ -108,13 +108,13 @@
               class="mx-2 border-outline-gray-2"
             />
             <Dialog
-              :options="{ title: __('Duplicate SLA policy') }"
+              :options="{ title: __('Duplicate SLA Policy') }"
               v-model="duplicateDialog.show"
             >
               <template #body-content>
                 <div class="flex flex-col gap-4">
                   <FormControl
-                    :label="__('New SLA policy name')"
+                    :label="__('New SLA Policy Name')"
                     type="text"
                     v-model="duplicateDialog.name"
                     maxlength="100"
@@ -215,7 +215,7 @@ const duplicate = (sla) => {
         auto: true,
         onSuccess(newSlaData) {
           slaPolicyListResource.reload()
-          toast.success(__('SLA policy duplicated'))
+          toast.success(__('SLA Policy Duplicated'))
           duplicateDialog.value = {
             show: false,
             name: '',
@@ -239,7 +239,7 @@ const deleteSla = (sla) => {
 
   slaPolicyListResource.delete.submit(sla.name, {
     onSuccess: () => {
-      toast.success(__('SLA policy deleted'))
+      toast.success(__('SLA Policy Deleted'))
     },
     onError: (err) => {
       const message =
@@ -261,7 +261,7 @@ const onToggle = (sla) => {
     },
     {
       onSuccess: () => {
-        toast.success(__('SLA policy status updated'))
+        toast.success(__('SLA Policy Status Updated'))
       },
     },
   )

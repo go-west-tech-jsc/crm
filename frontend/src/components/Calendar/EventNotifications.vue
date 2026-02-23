@@ -28,7 +28,7 @@
                 ]"
                 v-model="notification.type"
                 variant="outline"
-                :placeholder="__('Select type')"
+                :placeholder="__('Select Type')"
               />
               <div>{{ __('at') }}</div>
               <TimePicker
@@ -64,7 +64,7 @@
               v-if="i == notifications.length - 1"
               class="w-full"
               :icon-left="BellIcon"
-              :label="__('Add notification')"
+              :label="__('Add Notification')"
               variant="outline"
               size="sm"
               @click="addNotification"
@@ -96,7 +96,7 @@
                 ]"
                 v-model="notification.type"
                 variant="outline"
-                :placeholder="__('Select type')"
+                :placeholder="__('Select Type')"
               />
             </div>
             <div class="flex items-center gap-2 w-full">
@@ -125,7 +125,7 @@
               v-if="i == notifications.length - 1"
               class="w-full"
               :icon-left="BellIcon"
-              :label="__('Add notification')"
+              :label="__('Add Notification')"
               variant="outline"
               size="sm"
               @click="addNotification"
@@ -232,7 +232,7 @@ function addShowNotifications() {
 }
 
 const notificationSummary = computed(() => {
-  if (!notifications.value?.length) return __('Add notification')
+  if (!notifications.value?.length) return __('Add Notification')
   return notifications.value
     .map((n) => {
       let intervalLabel = ''

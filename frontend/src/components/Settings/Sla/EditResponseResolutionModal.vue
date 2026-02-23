@@ -2,7 +2,7 @@
   <Dialog
     v-model="dialog"
     :options="{
-      title: __('Edit response and resolution'),
+      title: __('Edit Response & Resolution'),
     }"
   >
     <template #body-content>
@@ -11,7 +11,7 @@
           type="select"
           size="sm"
           variant="subtle"
-          :placeholder="__('Select priority')"
+          :placeholder="__('Select Priority')"
           :label="__('Priority')"
           v-model="priorityData.priority"
           :options="priorityOptions"
@@ -19,7 +19,7 @@
           class="text-ink-gray-8"
         />
         <div>
-          <FormLabel :label="__('First response time')" required />
+          <FormLabel :label="__('First Response Time')" required />
           <Popover class="mt-2">
             <template #target="{ togglePopover }" class="w-max">
               <div
@@ -29,7 +29,7 @@
                 <div v-if="priorityData.first_response_time">
                   {{ formatTimeHMS(priorityData.first_response_time) }}
                 </div>
-                <div v-else class="text-gray-500">{{ __('Select time') }}</div>
+                <div v-else class="text-gray-500">{{ __('Select Time') }}</div>
               </div>
             </template>
             <template #body>
@@ -44,7 +44,7 @@
         </div>
         <Checkbox
           v-model="priorityData.default_priority"
-          :label="__('Set default priority')"
+          :label="__('Set Default Priority')"
         />
       </div>
     </template>
@@ -54,7 +54,7 @@
           <Button
             variant="subtle"
             :theme="isConfirmingDelete ? 'red' : 'gray'"
-            :label="isConfirmingDelete ? __('Confirm delete') : __('Delete')"
+            :label="isConfirmingDelete ? __('Confirm Delete') : __('Delete')"
             @click="deleteItem"
             icon-left="trash-2"
           />
@@ -108,13 +108,13 @@ const priorityData = ref({
 
 const validateForm = () => {
   if (!priorityData.value.priority) {
-    toast.error(__('Please select a priority'))
+    toast.error(__('Please select a Priority'))
     return false
   }
 
   const responseTime = parseInt(priorityData.value.first_response_time)
   if (isNaN(responseTime) || responseTime <= 0) {
-    toast.error(__('Response time is required'))
+    toast.error(__('Response Time is required'))
     return false
   }
 

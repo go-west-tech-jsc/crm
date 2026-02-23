@@ -2,7 +2,7 @@
   <div class="flex items-center justify-between">
     <div class="flex flex-col gap-1">
       <div class="text-lg font-semibold text-ink-gray-8">
-        {{ __('Work schedule and holidays') }}
+        {{ __('Work Schedule & Holidays') }}
       </div>
       <div class="text-p-sm text-ink-gray-6 max-w-lg">
         {{
@@ -17,7 +17,7 @@
         <Button
           class="text-sm"
           :icon-right="open ? 'chevron-up' : 'chevron-down'"
-          :label="slaData.holiday_list || __('Select holiday list')"
+          :label="slaData.holiday_list || __('Select Holiday List')"
         />
       </template>
       <template #body>
@@ -63,7 +63,7 @@
             <Button
               class="w-full !justify-start !text-ink-gray-5"
               variant="ghost"
-              :label="__('Create new holiday list')"
+              :label="__('Create New Holiday List')"
               @click="createNewHolidayList()"
               icon-left="plus"
             />
@@ -153,14 +153,14 @@
         v-if="slaData.working_hours?.length === 0"
         class="text-center p-4 text-gray-600"
       >
-        {{ __('No workdays in the list') }}
+        {{ __('No Workdays in the List') }}
       </div>
     </div>
     <div class="flex items-center justify-between mt-2.5">
       <Button
         v-if="slaData.working_hours?.length < 7"
         variant="subtle"
-        :label="__('Add row')"
+        :label="__('Add Row')"
         @click="addWorkDay"
         icon-left="plus"
       />
@@ -216,12 +216,12 @@ const columns = [
     isRequired: true,
   },
   {
-    label: __('Start time'),
+    label: __('Start Time'),
     key: 'start_time',
     isRequired: true,
   },
   {
-    label: __('End time'),
+    label: __('End Time'),
     key: 'end_time',
     isRequired: true,
   },

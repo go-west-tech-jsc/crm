@@ -15,14 +15,14 @@
       <div class="flex items-center gap-x-1">
         <ShortcutTooltip
           v-if="mode == 'details' && !readonly"
-          :label="__('Edit event')"
+          :label="__('Edit Event')"
           combo="Enter"
         >
           <Button :icon="EditIcon" variant="ghost" @click="editDetails" />
         </ShortcutTooltip>
         <ShortcutTooltip
           v-if="(mode === 'edit' || mode === 'details') && !readonly"
-          :label="__('Delete event')"
+          :label="__('Delete Event')"
           combo="Delete"
           :alt-combos="['Backspace']"
         >
@@ -30,12 +30,12 @@
         </ShortcutTooltip>
         <ShortcutTooltip
           v-if="mode === 'edit' || mode === 'details'"
-          :label="__('Duplicate event')"
+          :label="__('Duplicate Event')"
           combo="Mod+D"
         >
           <Button icon="copy" variant="ghost" @click="duplicateEvent" />
         </ShortcutTooltip>
-        <ShortcutTooltip :label="__('Close panel')" combo="Esc">
+        <ShortcutTooltip :label="__('Close Panel')" combo="Esc">
           <Button icon="x" variant="ghost" @click="close" />
         </ShortcutTooltip>
       </div>
@@ -62,7 +62,7 @@
                 : 'text-ink-gray-8 '
             "
           >
-            {{ _event.title || __('(No title)') }}
+            {{ _event.title || __('(No Title)') }}
           </div>
           <div class="text-ink-gray-6 text-p-base">{{ formattedDateTime }}</div>
         </div>
@@ -228,7 +228,7 @@
           <Button
             v-if="!showAllParticipants && peoples.length > 2"
             variant="ghost"
-            :label="__('See all participants')"
+            :label="__('See All Participants')"
             iconLeft="more-horizontal"
             class="!justify-start w-fit"
             @click="showAllParticipants = true"
@@ -236,7 +236,7 @@
           <Button
             v-else-if="showAllParticipants"
             variant="ghost"
-            :label="__('Show less')"
+            :label="__('Show Less')"
             iconLeft="chevron-up"
             class="!justify-start w-fit"
             @click="showAllParticipants = false"
@@ -281,7 +281,7 @@
           size="md"
           v-model="_event.title"
           :debounce="500"
-          :placeholder="__('Event title')"
+          :placeholder="__('Event Title')"
           @change="sync"
           @keyup.enter="saveEvent"
         />
@@ -290,7 +290,7 @@
         <div class="flex items-center">
           <Switch v-model="_event.isFullDay" @update:model-value="sync" />
           <div class="ml-2">
-            {{ __('All day') }}
+            {{ __('All Day') }}
           </div>
         </div>
         <!-- <div class="flex items-center gap-1.5 text-ink-gray-5">
@@ -334,7 +334,7 @@
             class="w-full"
             variant="outline"
             :modelValue="_event.fromTime"
-            :placeholder="__('Start time')"
+            :placeholder="__('Start Time')"
             @update:modelValue="(time) => updateTime(time, true)"
           />
           <TimePicker
@@ -342,7 +342,7 @@
             variant="outline"
             :modelValue="_event.toTime"
             :options="toOptions"
-            :placeholder="__('End time')"
+            :placeholder="__('End Time')"
             placement="bottom-end"
             @update:modelValue="(time) => updateTime(time)"
           />
@@ -373,7 +373,7 @@
         <TextInput
           class="w-full"
           v-model="_event.location"
-          :placeholder="__('Add location')"
+          :placeholder="__('Add Location')"
           variant="outline"
           size="sm"
         />
@@ -391,7 +391,7 @@
                 sync()
               }
             "
-            :placeholder="__('Add description')"
+            :placeholder="__('Add Description')"
           />
         </div>
       </div>
@@ -400,7 +400,7 @@
       <CollapsibleSection
         headerClass="mx-4.5 my-2.5"
         :opened="false"
-        :label="__('Linked with')"
+        :label="__('Linked With')"
       >
         <div
           class="flex items-center justify-between gap-3 px-4.5 py-[7px] text-ink-gray-7"
@@ -426,7 +426,7 @@
               ]"
               v-model="_event.referenceDoctype"
               variant="outline"
-              :placeholder="__('Add lead or deal')"
+              :placeholder="__('Add Lead or Deal')"
               @update:modelValue="
                 () => {
                   _event.referenceDocname = ''
@@ -462,7 +462,7 @@
       <CollapsibleSection
         headerClass="mx-4.5 my-2.5"
         :opened="false"
-        :label="__('More options')"
+        :label="__('More Options')"
       >
         <div
           class="flex items-center justify-between gap-3 px-4.5 py-[7px] text-ink-gray-7"
@@ -509,8 +509,8 @@
             mode === 'edit'
               ? __('Save')
               : mode === 'duplicate'
-                ? __('Duplicate event')
-                : __('Create event')
+                ? __('Duplicate Event')
+                : __('Create Event')
           }}
         </Button>
       </div>
@@ -671,10 +671,10 @@ const notifications = computed({
 })
 
 const title = computed(() => {
-  if (props.mode === 'details') return __('Event details')
-  if (props.mode === 'edit') return __('Editing event')
-  if (props.mode === 'new') return __('New event')
-  return __('Duplicate event')
+  if (props.mode === 'details') return __('Event Details')
+  if (props.mode === 'edit') return __('Editing Event')
+  if (props.mode === 'new') return __('New Event')
+  return __('Duplicate Event')
 })
 
 const currentAttendee = computed(() => {
@@ -909,7 +909,7 @@ function reset() {
 
 function showDiscardChangesModal(action) {
   $dialog({
-    title: __('Discard unsaved changes?'),
+    title: __('Discard Unsaved Changes?'),
     message: __(
       'Are you sure you want to discard unsaved changes to this event?',
     ),
@@ -938,7 +938,7 @@ const formattedDateTime = computed(() => {
   const date = dayjs(_event.value.fromDate)
 
   if (_event.value.isFullDay) {
-    return `${__('All day')} - ${date.format('ddd, D MMM YYYY')}`
+    return `${__('All Day')} - ${date.format('ddd, D MMM YYYY')}`
   }
 
   let start = dayjs(_event.value.fromDate + ' ' + _event.value.fromTime)
