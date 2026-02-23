@@ -92,7 +92,7 @@ const user = computed(() => getUser() || {})
 const tabs = computed(() => {
   let _tabs = [
     {
-      label: __('My settings'),
+      label: __('My Settings'),
       items: [
         {
           label: __('Profile'),
@@ -107,7 +107,7 @@ const tabs = computed(() => {
       ],
     },
     {
-      label: __('System configuration'),
+      label: __('System Configuration'),
       items: [
         {
           label: __('Forecasting'),
@@ -115,7 +115,7 @@ const tabs = computed(() => {
           icon: TrendingUpDownIcon,
         },
         {
-          label: __('Currency & exchange rate'),
+          label: __('Currency & Exchange Rate'),
           icon: CircleDollarSignIcon,
           component: markRaw(CurrencySettings),
         },
@@ -133,7 +133,7 @@ const tabs = computed(() => {
       condition: () => isManager(),
     },
     {
-      label: __('User management'),
+      label: __('User Management'),
       items: [
         {
           label: __('Users'),
@@ -142,7 +142,7 @@ const tabs = computed(() => {
           condition: () => isManager(),
         },
         {
-          label: __('Invite user'),
+          label: __('Invite User'),
           icon: 'user-plus',
           component: markRaw(InviteUserPage),
           condition: () => isManager(),
@@ -167,15 +167,15 @@ const tabs = computed(() => {
       ],
     },
     {
-      label: __('Automation & rules'),
+      label: __('Automation & Rules'),
       items: [
         {
-          label: __('Assignment rules'),
+          label: __('Assignment Rules'),
           icon: markRaw(h(SettingsIcon2, { class: 'rotate-90' })),
           component: markRaw(AssignmentRulePage),
         },
         {
-          label: __('SLA policies'),
+          label: __('SLA Policies'),
           icon: markRaw(h(ShieldCheck)),
           component: markRaw(SlaConfig),
         },
@@ -185,7 +185,7 @@ const tabs = computed(() => {
       label: __('Customization'),
       items: [
         {
-          label: __('Home actions'),
+          label: __('Home Actions'),
           component: markRaw(HomeActions),
           icon: 'home',
         },
@@ -220,7 +220,7 @@ const tabs = computed(() => {
           condition: () => isManager(),
         },
         {
-          label: __('Lead syncing'),
+          label: __('Lead Syncing'),
           icon: 'refresh-cw',
           component: markRaw(LeadSyncSourcePage),
           condition: () => isManager(),

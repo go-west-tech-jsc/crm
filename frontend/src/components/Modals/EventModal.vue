@@ -6,10 +6,10 @@
           <h3 class="text-2xl font-semibold leading-6 text-ink-gray-9">
             {{
               mode === 'edit'
-                ? __('Edit an event')
+                ? __('Edit an Event')
                 : mode === 'duplicate'
-                  ? __('Duplicate an event')
-                  : __('Create an event')
+                  ? __('Duplicate an Event')
+                  : __('Create an Event')
             }}
           </h3>
         </div>
@@ -68,14 +68,14 @@
         </div>
         <div class="flex items-center">
           <div class="text-base text-ink-gray-7 w-3/12">
-            {{ __('All day') }}
+            {{ __('All Day') }}
           </div>
           <Switch v-model="_event.isFullDay" />
         </div>
         <div class="border-t border-outline-gray-1" />
         <div class="flex items-center">
           <div class="text-base text-ink-gray-7 w-3/12">
-            {{ __('Date & time') }}
+            {{ __('Date & Time') }}
           </div>
           <div class="flex gap-2 w-9/12">
             <DatePicker
@@ -100,7 +100,7 @@
               class="max-w-[112px]"
               variant="outline"
               :modelValue="_event.fromTime"
-              :placeholder="__('Start time')"
+              :placeholder="__('Start Time')"
               @update:modelValue="(time) => updateTime(time, true)"
             />
             <TimePicker
@@ -109,7 +109,7 @@
               variant="outline"
               :modelValue="_event.toTime"
               :options="toOptions"
-              :placeholder="__('End time')"
+              :placeholder="__('End Time')"
               placement="bottom-end"
               @update:modelValue="(time) => updateTime(time)"
             />
@@ -163,7 +163,7 @@
               size="sm"
               variant="outline"
               v-model="_event.location"
-              :placeholder="__('Add location')"
+              :placeholder="__('Add Location')"
             />
           </div>
         </div>
@@ -177,7 +177,7 @@
               :bubbleMenu="true"
               :content="_event.description"
               @change="(val) => (_event.description = val)"
-              :placeholder="__('Add description.')"
+              :placeholder="__('Add Description.')"
             />
           </div>
         </div>

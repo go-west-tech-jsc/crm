@@ -126,7 +126,7 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
-    default: __('Add attendee'),
+    default: __('Add Attendee'),
   },
   inputClass: {
     type: String,
@@ -292,7 +292,7 @@ const addValue = (option) => {
     p = p.trim()
     if (!p) continue
     if (existing.has(p)) {
-      info.value = __('email already exists')
+      info.value = __('Email Already Exists')
       continue
     }
     if (props.validate && !props.validate(p)) {

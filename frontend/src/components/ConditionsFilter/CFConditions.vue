@@ -23,7 +23,7 @@
       <Dropdown v-slot="{ open }" :options="dropdownOptions">
         <Button
           :disabled="props.disableAddCondition"
-          :label="__('Add condition')"
+          :label="__('Add Condition')"
           icon-left="plus"
           :icon-right="open ? 'chevron-up' : 'chevron-down'"
         />
@@ -82,7 +82,7 @@ const isGroupCondition = (condition) => {
 const dropdownOptions = computed(() => {
   const options = [
     {
-      label: __('Add condition'),
+      label: __('Add Condition'),
       onClick: () => {
         const conjunction = getConjunction()
         props.conditions.push(conjunction, ['', '', ''])
@@ -91,7 +91,7 @@ const dropdownOptions = computed(() => {
   ]
   if (props.level < 3) {
     options.push({
-      label: __('Add condition group'),
+      label: __('Add Condition Group'),
       onClick: () => {
         const conjunction = getConjunction()
         props.conditions.push(conjunction, [[]])

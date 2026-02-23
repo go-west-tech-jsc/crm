@@ -91,7 +91,7 @@
       v-if="slaData.priorities?.length === 0"
       class="text-center p-4 text-gray-600"
     >
-      {{ __('No priorities in the list') }}
+      {{ __('No Priorities in the list') }}
     </div>
   </div>
   <div
@@ -106,7 +106,7 @@
       <Button
         v-if="slaData.priorities.length !== priorityOptions.length"
         variant="subtle"
-        :label="__('Add row')"
+        :label="__('Add Row')"
         @click="addRow"
         icon-left="plus"
       />
@@ -186,12 +186,12 @@ const columns = computed(() => [
     isRequired: true,
   },
   {
-    label: __('First response time'),
+    label: __('First Response Time'),
     key: 'first_response_time',
     isRequired: true,
   },
   {
-    label: __('Default priority'),
+    label: __('Default Priority'),
     key: 'default_priority',
   },
 ])

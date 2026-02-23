@@ -186,7 +186,7 @@ const computedEvents = computed(() => {
 })
 
 const formattedDateTime = (e) => {
-  if (e.allDay) return __('All day')
+  if (e.allDay) return __('All Day')
 
   if (e.fromTime.includes(':00')) {
     e.fromTime = e.fromTime.replace(':00', '')

@@ -5,7 +5,7 @@
         <Button
           variant="ghost"
           icon-left="chevron-left"
-          :label="slaData.sla_name || __('New SLA policy')"
+          :label="slaData.sla_name || __('New SLA Policy')"
           size="md"
           @click="goBack()"
           class="cursor-pointer -ml-4 hover:bg-transparent focus:bg-transparent focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:none active:bg-transparent active:outline-none active:ring-0 active:ring-offset-0 active:text-ink-gray-5 font-semibold text-ink-gray-7 text-lg hover:opacity-70 !pr-0 !max-w-96 !justify-start"
@@ -14,7 +14,7 @@
           variant="subtle"
           theme="orange"
           size="sm"
-          :label="__('Unsaved')"
+          :label="__('Not Saved')"
           v-if="isDirty"
         />
       </div>
@@ -68,7 +68,7 @@
             <ErrorMessage :message="slaDataErrors.sla_name" class="mt-2" />
           </div>
           <div class="space-y-1.5">
-            <FormLabel :label="__('Apply on')" required />
+            <FormLabel :label="__('Apply On')" required />
             <Select
               :options="[
                 {
@@ -85,7 +85,7 @@
           </div>
           <div class="space-y-0.5">
             <Checkbox
-              :label="__('Rolling responses')"
+              :label="__('Rolling Responses')"
               v-model="slaData.rolling_responses"
             />
             <div class="text-p-sm text-ink-gray-5">
@@ -104,7 +104,7 @@
               __('Assignment conditions')
             }}</span>
             <span class="text-p-sm text-ink-gray-6">
-              {{ __('Choose which tickets are affected by this policy.') }}
+              {{ __('Choose which leads/deals are affected by this policy.') }}
             </span>
           </div>
           <div class="mt-3">
@@ -148,7 +148,7 @@
                   conditions from this UI.
                 </span>
                 <Button
-                  :label="__('I understand, add conditions')"
+                  :label="__('I understand, Add Conditions')"
                   variant="subtle"
                   theme="gray"
                   @click="useNewUI = true"
@@ -165,7 +165,7 @@
         <div>
           <div class="flex flex-col gap-1">
             <span class="text-lg font-semibold text-ink-gray-8">
-              {{ __('Valid from') }}
+              {{ __('Valid From') }}
             </span>
             <span class="text-p-sm text-ink-gray-6">
               {{ __('Choose how long this SLA policy will be active.') }}
@@ -173,7 +173,7 @@
           </div>
           <div class="mt-3.5 flex gap-5 flex-col md:flex-row">
             <div class="w-full space-y-1.5">
-              <FormLabel :label="__('Start date')" for="start_date" />
+              <FormLabel :label="__('Start Date')" for="start_date" />
               <DatePicker
                 v-model="slaData.start_date"
                 variant="subtle"
@@ -190,7 +190,7 @@
               <ErrorMessage :message="slaDataErrors.start_date" />
             </div>
             <div class="w-full space-y-1.5">
-              <FormLabel :label="__('End date')" for="end_date" />
+              <FormLabel :label="__('End Date')" for="end_date" />
               <DatePicker
                 v-model="slaData.end_date"
                 variant="subtle"
@@ -212,7 +212,7 @@
         <div>
           <div class="flex flex-col gap-1">
             <span class="text-lg font-semibold text-ink-gray-8">
-              {{ __('Response & follow up') }}
+              {{ __('Response & Follow Up') }}
             </span>
             <span class="text-p-sm text-ink-gray-6">
               {{
@@ -343,7 +343,7 @@ if (step.value.data && step.value.fetchData) {
 const goBack = () => {
   const confirmDialogInfo = {
     show: true,
-    title: __('Unsaved changes'),
+    title: __('Unsaved Changes'),
     message: __(
       'Are you sure you want to go back? Unsaved changes will be lost.',
     ),
@@ -397,7 +397,7 @@ const saveSla = () => {
     if (isOldSla.value && useNewUI.value) {
       showConfirmDialog.value = {
         show: true,
-        title: __('Confirm overwrite'),
+        title: __('Confirm Overwrite'),
         message: __(
           'Your old conditions will be overwritten. Are you sure you want to save?',
         ),
@@ -426,7 +426,7 @@ const createSla = () => {
     },
     {
       onSuccess(data) {
-        toast.success(__('SLA policy created'))
+        toast.success(__('SLA Policy Created'))
         updateStep('view', data, true)
         getSlaResource.submit({
           doctype: 'CRM Service Level Agreement',
@@ -436,7 +436,7 @@ const createSla = () => {
       onError(err) {
         const message = err?.messages?.[0]
         toast.error(
-          message || __('Some error occurred while creating SLA policy'),
+          message || __('Some error occurred while creating SLA Policy'),
         )
       },
     },
@@ -497,7 +497,7 @@ const updateSla = async () => {
     await getSlaResource.reload()
   }
 
-  toast.success(__('SLA policy updated'))
+  toast.success(__('SLA Policy Updated'))
   slaPolicyListResource.reload()
 }
 

@@ -4,12 +4,12 @@
     <div class="flex justify-between px-2 text-ink-gray-8">
       <div class="flex flex-col gap-1">
         <h2 class="flex gap-2 text-xl font-semibold leading-none h-5">
-          {{ __('Calendar settings') }}
+          {{ __('Calendar Settings') }}
         </h2>
         <p class="text-p-base text-ink-gray-6">
           {{
             __(
-              'Configure your calendar settings like default view and event notifications here',
+              'Configure your Calendar Settings like Default View and Event Notifications here',
             )
           }}
         </p>
@@ -30,7 +30,7 @@
       <div class="flex items-center justify-between gap-8 py-3 px-2">
         <div class="flex flex-col">
           <div class="text-p-base font-medium text-ink-gray-7 truncate">
-            {{ __('Default view') }}
+            {{ __('Default View') }}
           </div>
           <div class="text-p-sm text-ink-gray-5">
             {{
@@ -50,7 +50,7 @@
               { label: __('Monthly'), value: 'Monthly' },
             ]"
             v-model="settings.doc.default_calendar_view"
-            :placeholder="__('Select view')"
+            :placeholder="__('Select View')"
           />
         </div>
       </div>
@@ -58,7 +58,7 @@
       <div class="flex flex-col gap-3 px-2 py-3">
         <div>
           <div class="text-p-base font-medium text-ink-gray-7 truncate">
-            {{ __('Event notifications') }}
+            {{ __('Event Notifications') }}
           </div>
           <div
             class="text-p-sm text-ink-gray-5"
@@ -139,7 +139,7 @@
         </div>
         <Button
           class="w-fit"
-          :label="__('Add notification')"
+          :label="__('Add Notification')"
           iconLeft="plus"
           @click="
             notifications.push({
@@ -154,7 +154,7 @@
       <div class="flex flex-col gap-3 py-3 px-2">
         <div>
           <div class="text-p-base font-medium text-ink-gray-7 truncate">
-            {{ __('All day event notifications') }}
+            {{ __('All Day Event Notifications') }}
           </div>
           <div
             class="text-p-sm text-ink-gray-5"
@@ -239,7 +239,7 @@
         </div>
         <Button
           class="w-fit"
-          :label="__('Add notification')"
+          :label="__('Add Notification')"
           iconLeft="plus"
           @click="
             allDayNotifications.push({

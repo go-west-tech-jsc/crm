@@ -128,7 +128,7 @@ const props = defineProps({
   validate: { type: Function, default: null },
   errorMessage: {
     type: Function,
-    default: (value) => __('{0} is an Invalid value', [value]),
+    default: (value) => __('{0} is an Invalid Value', [value]),
   },
   emptyPlaceholder: { type: String, default: __('No results found') },
   // UI
@@ -251,7 +251,7 @@ function addValue(input) {
     .filter(Boolean)
   for (const email of parts) {
     if (values.value?.includes(email)) {
-      info.value = __('email already exists')
+      info.value = __('Email already exists')
       continue
     }
     if (props.validate && !props.validate(email)) {

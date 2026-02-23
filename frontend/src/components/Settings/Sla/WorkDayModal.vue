@@ -2,7 +2,7 @@
   <Dialog
     v-model="dialog.show"
     @after-leave="resetForm"
-    :options="{ title: __('Edit workday') }"
+    :options="{ title: __('Edit Workday') }"
   >
     <template #body-content>
       <div class="flex flex-col gap-4">
@@ -11,7 +11,7 @@
             type="select"
             size="sm"
             variant="subtle"
-            :placeholder="__('Select workday')"
+            :placeholder="__('Select Workday')"
             :label="__('Workday')"
             v-model="workDayData.workday"
             :options="workdayOptions"
@@ -27,8 +27,8 @@
             type="time"
             size="sm"
             variant="subtle"
-            :placeholder="__('Start time')"
-            :label="__('Start time')"
+            :placeholder="__('Start Time')"
+            :label="__('Start Time')"
             v-model="workDayData.start_time"
             :class="{ 'border-red-500': errors.start_time }"
             @blur="validateField('start_time')"
@@ -41,8 +41,8 @@
             type="time"
             size="sm"
             variant="subtle"
-            :placeholder="__('End time')"
-            :label="__('End time')"
+            :placeholder="__('End Time')"
+            :label="__('End Time')"
             v-model="workDayData.end_time"
             :class="{ 'border-red-500': errors.end_time }"
             @blur="validateTimeRange"
@@ -63,7 +63,7 @@
           <Button
             variant="subtle"
             :theme="isConfirmingDelete ? 'red' : 'gray'"
-            :label="isConfirmingDelete ? __('Confirm delete') : __('Delete')"
+            :label="isConfirmingDelete ? __('Confirm Delete') : __('Delete')"
             @click="deleteWorkDay"
             icon-left="trash-2"
           />
@@ -183,10 +183,10 @@ function validateField(field) {
 
 function validateTimeRange() {
   if (!workDayData.start_time) {
-    errors.start_time = __('Start time is required')
+    errors.start_time = __('Start Time is required')
   }
   if (!workDayData.end_time) {
-    errors.end_time = __('End time is required')
+    errors.end_time = __('End Time is required')
   }
   if (!workDayData.start_time || !workDayData.end_time) {
     return false
@@ -201,7 +201,7 @@ function validateTimeRange() {
   const endTotalMinutes = endHours * 60 + endMinutes
 
   if (endTotalMinutes <= startTotalMinutes) {
-    errors.end_time = __('End time must be after start time')
+    errors.end_time = __('End Time must be after Start Time')
     return false
   }
 

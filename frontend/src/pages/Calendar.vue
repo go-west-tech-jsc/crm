@@ -4,7 +4,7 @@
       <ViewBreadcrumbs routeName="Calendar" />
     </template>
     <template #right-header>
-      <ShortcutTooltip :label="__('Create event')" combo="Mod+E">
+      <ShortcutTooltip :label="__('Create Event')" combo="Mod+E">
         <Button
           variant="solid"
           :label="__('Create')"
