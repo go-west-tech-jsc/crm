@@ -30,7 +30,7 @@
         </SidebarLink>
       </div>
       <div v-for="view in allViews" :key="view.label">
-        <div class="border-t mx-2 my-1.5" />
+        <div class="mx-2 my-1.5" />
         <CollapsibleSection
           :label="view.name"
           :hideLabel="view.hideLabel"
